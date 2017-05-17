@@ -21,6 +21,20 @@
 				<groupId>org.everit.osgi.dev</groupId>
 				<artifactId>eosgi-maven-plugin</artifactId>
 				<version>4.1.1</version>
+				<configuration>
+					<environments>
+						<environment>
+							<id>equinox</id>
+							<framework>equinox</framework>
+							<launchConfig>
+								<vmArguments>
+									<http.port>-Dorg.osgi.service.http.port=8888</http.port>
+									<https.port>-Dorg.osgi.service.http.port.secure=-1</https.port>
+								</vmArguments>
+							</launchConfig>
+						</environment>
+					</environments>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -31,7 +45,7 @@
 			<artifactId>${project.groupId}.core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
@@ -57,6 +71,18 @@
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.configadmin</artifactId>
 			<version>1.8.14</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.metatype</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.everit.jetty</groupId>
+			<artifactId>org.everit.jetty.osgi.boot</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>
