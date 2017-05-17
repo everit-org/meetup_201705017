@@ -3,9 +3,9 @@ package org.everit.meetup.core;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.everit.osgi.ecm.annotation.Activate;
 import org.everit.osgi.ecm.annotation.Component;
 import org.everit.osgi.ecm.annotation.Service;
+import org.everit.osgi.ecm.annotation.attribute.LongAttribute;
 import org.everit.osgi.ecm.extender.ExtendComponent;
 
 @ExtendComponent
@@ -13,8 +13,15 @@ import org.everit.osgi.ecm.extender.ExtendComponent;
 @Service(MyComponent.class)
 public class MyComponent {
 
+	private long num;
+	
+	@LongAttribute(defaultValue = 6)
+	public void setNum(long num) {
+		this.num = num;
+	}
+	
 	public long addTodo(String text) {
-		return 0;
+		return num;
 	}
 	
 	public void removeTodo(long todoId) {

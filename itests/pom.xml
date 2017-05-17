@@ -101,5 +101,12 @@
 			<artifactId>org.everit.osgi.ecm.extender.ri</artifactId>
 			<version>3.0.3</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.everit.osgi.dev</groupId>
+			<artifactId>org.everit.osgi.dev.testrunner.junit4</artifactId>
+			<version>4.0.0</version>
+		</dependency>
 	</dependencies>
 </project>
