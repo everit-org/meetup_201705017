@@ -30,8 +30,15 @@
 								<vmArguments>
 									<http.port>-Dorg.osgi.service.http.port=8888</http.port>
 									<https.port>-Dorg.osgi.service.http.port.secure=-1</https.port>
+									<jacoco>-javaagent:jacoco.jar=output=tcpserver</jacoco>
 								</vmArguments>
 							</launchConfig>
+							<artifacts>
+								<artifact>
+									<coordinates>org.jacoco:org.jacoco.agent:jar:runtime:0.7.9</coordinates>
+									<targetFile>jacoco.jar</targetFile>
+								</artifact>
+							</artifacts>
 						</environment>
 					</environments>
 				</configuration>

@@ -28,5 +28,6 @@ public class MyTest {
 	@TestDuringDevelopment
 	public void simpleCrud() {
 		System.out.println(myComponent.addTodo(""));
+		myComponent.listTodos();
 	}
 }
