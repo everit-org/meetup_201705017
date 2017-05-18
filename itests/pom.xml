@@ -22,12 +22,16 @@
 				<artifactId>eosgi-maven-plugin</artifactId>
 				<version>4.1.1</version>
 				<configuration>
+					<syncBackFolders>
+						<config>configuration/configadmin</config>
+					</syncBackFolders>				
 					<environments>
 						<environment>
 							<id>equinox</id>
 							<framework>equinox</framework>
 							<launchConfig>
 								<vmArguments>
+									<config>-Dfelix.cm.dir=../../../configadmin</config>
 									<http.port>-Dorg.osgi.service.http.port=8888</http.port>
 									<https.port>-Dorg.osgi.service.http.port.secure=-1</https.port>
 									<jacoco>-javaagent:jacoco.jar=output=tcpserver</jacoco>
@@ -120,6 +124,34 @@
     <groupId>org.everit.osgi</groupId>
     <artifactId>org.everit.osgi.ecm.component.webconsole</artifactId>
     <version>3.0.2</version>
+</dependency>
+
+<dependency>
+    <groupId>org.osgi</groupId>
+    <artifactId>org.osgi.service.jdbc</artifactId>
+    <version>1.0.0</version>
+</dependency>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.195</version>
+</dependency>
+<dependency>
+    <groupId>org.everit.persistence</groupId>
+    <artifactId>org.everit.persistence.jdbc.dsf.ecm</artifactId>
+    <version>2.0.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.everit.persistence</groupId>
+    <artifactId>org.everit.persistence.jdbc.commons.dbcp.ecm</artifactId>
+    <version>2.0.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.aries.transaction</groupId>
+    <artifactId>org.apache.aries.transaction.manager</artifactId>
+    <version>1.1.1</version>
 </dependency>
 	</dependencies>
 </project>
